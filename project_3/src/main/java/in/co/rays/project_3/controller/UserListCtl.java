@@ -97,6 +97,7 @@ public class UserListCtl extends BaseCtl {
 		} else {
 		request.setAttribute("nextListSize", next.size());
 		}
+		
 		ServletUtility.setList(list, request);
 		ServletUtility.setPageNo(pageNo, request);
 		ServletUtility.setPageSize(pageSize, request);
@@ -180,7 +181,6 @@ public class UserListCtl extends BaseCtl {
 		ServletUtility.setDto(dto, request);
 		next = model.search(dto, pageNo + 1, pageSize);
 
-		ServletUtility.setList(list, request);
 		ServletUtility.setList(list, request);
 		if (list == null || list.size() == 0) {
 		if (!OP_DELETE.equalsIgnoreCase(op)) {

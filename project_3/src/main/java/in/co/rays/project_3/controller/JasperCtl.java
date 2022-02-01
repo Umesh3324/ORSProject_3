@@ -41,7 +41,8 @@ public class JasperCtl extends BaseCtl{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-		JasperReport jasperReport = JasperCompileManager.compileReport("C:\\@projectFour\\project_3\\src\\main\\webapp\\jasper\\Marksheet.jrxml");
+			JasperReport jasperReport = JasperCompileManager.compileReport("C:\\@projectFour\\project_3\\src\\main\\webapp\\jasper\\Marksheet.jrxml");
+//		JasperReport jasperReport = JasperCompileManager.compileReport("C:\\@projectFour\\project_3\\src\\main\\webapp\\jasper\\Blank_A4testing.jrxml");
 
 
 		HttpSession session = request.getSession(true);
@@ -89,9 +90,6 @@ public class JasperCtl extends BaseCtl{
 	 */
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-		
 		
 	}
 

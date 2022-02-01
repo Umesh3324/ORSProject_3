@@ -9,8 +9,8 @@
 <head>
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="<%=ORSView.APP_CONTEXT%>/css/BackGround.css"></link>
   
+  <link rel="stylesheet" href="<%=ORSView.APP_CONTEXT%>/css/BackGround.css"></link>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,7 +22,7 @@
   .navbar{
   z-index: 999;
   /* position: fixed; */
-  -webkit-font-smoothing: antialiased;
+
     /* background:#dbd8e3; */
     background: linear-gradient(to top, #fdd9eaec, rgb(231, 248, 232));
   
@@ -30,17 +30,18 @@
   }
  #navbardrop,#navbarDropdown{
  color: #003586;
- font-weight: 550;
- 
-  
+ font-size:1.1rem;
+ line-height:1.111111;
   }
-
  .dropdown-menu{
- background: #f7f6ee;
+ background: inherit;
+
  }
  .dropdown-item{
  z-index: 100;
- line-height: 10%;
+ line-height: 8%;
+/*   color:#391018; */
+  color:#702232;
  }
   .dropdown-item:hover{
  /* background: linear-gradient(to right, #fdd9eaec, rgb(231, 248, 232)); */
@@ -62,14 +63,52 @@ th{
  align: center;
  }
  .font-weight-thin{
- color:#162390;
+/*  color:#162390; */
+ color:#253858;
+ 
  }
+ 
+ .hover-underline-animation {
+ position: relative;
+
+}
+/* This is button effect*/
+
+.cta {
+ border: none;
+ background: none;
+}
+
+.hover-underline-animation {
+ position: relative;
+
+}
+
+.hover-underline-animation:after {
+ content: "";
+ position: absolute;
+ width: 100%;
+ transform: scaleX(0);
+ height: 1.5px;
+ bottom: 0;
+
+ left: 0;
+ background-color:  #003586;
+ transform-origin: bottom right;
+ transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+ transform: scaleX(1);
+ transform-origin: bottom left;
+}
+
  
   </style>
   
   </head>
 <body>
-<div id="wrapper">
+<%-- <div id="wrapper">
 		<%
 			for (int i = 1; i < 11; i++) {
 		%>
@@ -77,7 +116,7 @@ th{
 		<%
 			}
 		%>
-	</div>
+	</div> --%>
 
    
 
@@ -103,14 +142,15 @@ th{
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
-    <ul class="navbar-nav">
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav  d-flex ml-auto">
     
     <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
 
 				<%
 					if (userLoggedIn) {
 				%>
+				
 				
 				<%
 					if (userDto.getRoleid() == RoleDTO.STUDENT) {
@@ -120,7 +160,7 @@ th{
 					<a class="dropdown-item" href="<%=ORSView.MARKSHEET_CTL%>"><i
 						class="far fa-file"></i>Add Marksheet</a> <a class="dropdown-item"
 						href="<%=ORSView.MARKSHEET_LIST_CTL%>"><i class="fas fa-paste"></i>Marksheet
-		List</a> <a class="dropdown-item"
+			List</a> <a class="dropdown-item"
 						href="<%=ORSView.MARKSHEET_MERIT_LIST_CTL%>"><i
 						class=" far fa-file-alt"></i>Marksheet Merit List </a> <a
 						class="dropdown-item" href="<%=ORSView.GET_MARKSHEET_CTL%>"><i
@@ -135,8 +175,8 @@ th{
        
        <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link  btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        User
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+        <span class="hover-underline-animation">User</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.USER_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add User</a>
@@ -146,8 +186,8 @@ th{
     
     	 <!-- Dropdown -->
     <li class="nav-item dropdown ">
-      <a class="nav-link btn dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
-        Marksheet
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+       <span class="hover-underline-animation"> Marksheet</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.MARKSHEET_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add Marksheet</a>
@@ -160,8 +200,8 @@ th{
     
      <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Role
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+         <span class="hover-underline-animation"> Role</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.ROLE_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add Role</a>
@@ -171,8 +211,8 @@ th{
     
      <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-       College
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+       <span class="hover-underline-animation">College</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.COLLEGE_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add College</a>
@@ -183,8 +223,8 @@ th{
     
      <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Course
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+       <span class="hover-underline-animation">Course</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.COURSE_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add Course</a>
@@ -194,8 +234,8 @@ th{
     
     <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Student
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+      <span class="hover-underline-animation">Student</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.STUDENT_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add Student</a>
@@ -205,8 +245,8 @@ th{
     
     <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Faculty
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+       <span class="hover-underline-animation">Faculty</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.FACULTY_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add Faculty</a>
@@ -216,8 +256,8 @@ th{
     
     <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        TimeTable
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+        <span class="hover-underline-animation">TimeTable</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.TIMETABLE_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add Time Table</a>
@@ -227,8 +267,8 @@ th{
     
     <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link btn dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Subject
+      <a class="nav-link btn dropdown-toggle cta" href="#" id="navbardrop" data-toggle="dropdown">
+        <span class="hover-underline-animation">Subject</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<%=ORSView.SUBJECT_CTL%>"><i class="fas fa-pen"></i>&nbsp;Add Subject</a>
@@ -239,8 +279,8 @@ th{
     <%} }%>
     
     <li class="nav-item dropdown">
-	<a class="nav-link btn btn-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-tie"></i>&nbsp;<%=welcomeMsg%></a>
+	<a class="nav-link btn btn-link dropdown-toggle cta" href="#" id="navbarDropdown" role="button" 
+	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-tie"></i>&nbsp;<span class="hover-underline-animation"><%=welcomeMsg%></span></a>
 					
 	<div class="dropdown-menu ml-auto" aria-labelledby="navbarDropdown">
 						<%

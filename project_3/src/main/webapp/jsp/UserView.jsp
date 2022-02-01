@@ -107,7 +107,8 @@ border:solid black;
         <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<%=DataUtility.getStringData(dto.getFirstname())%>">
       </div>
     </div>
-	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("firstname", request)%></font></br>			
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("firstname", request)%></font></br>			
 	
 	
     <div class="col-sm-12">
@@ -264,8 +265,6 @@ border:solid black;
           	<div class="col-md-4 mb-4"></div>
 
 	</div>
-		
-
 	
 	<%@ include file="Footer.jsp"%>
 </body>

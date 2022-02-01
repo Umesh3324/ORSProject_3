@@ -48,7 +48,7 @@
 			%>
 
 			<center>
-				<h1 class=" font-weight-thin pt-3"><u>Student
+				<h1 class=" font-weight-thin d-flex justify-content-center"><u>Student
 					List</u></h1>
 			</center>
 			

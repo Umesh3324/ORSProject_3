@@ -17,10 +17,10 @@
     </Head>
     <body >
    <!--  <div class="bg"> -->
-
+<%-- 
     <div id="wrapper"><% for(int i=1;i<11;i++){ %>
         <div class="bubble x<%=i%>"></div><%}%>
-    </div>
+    </div> --%>
     
     
     

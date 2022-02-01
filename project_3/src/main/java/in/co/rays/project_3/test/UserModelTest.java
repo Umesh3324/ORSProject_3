@@ -22,17 +22,17 @@ public static UserModelInt model = new UserModelHibImp();
 
 		//Ok Tested by Umesh
 		
-				addTest();   //Done
+//				addTest();   //Done
 //		testupdate();	//Done
 		//testdelete();	//Done
 		
 //		testsearch();		//Done
 //		testlist();			//Done
 		
-//		testfindbypk();	// Done
+		testfindbypk();	// Done
 //	    testfindbyloginid();	//Done
 		
-		testauthenticate();	// Done
+//		testauthenticate();	// Done
 //		testchangepass(); //**
 		
 //		testregisteruser();

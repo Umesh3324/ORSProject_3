@@ -109,6 +109,7 @@
 									style="font-size: 17px"
 									value="<%=UserRegistrationCtl.OP_SIGN_UP%>">
 							</div>
+							
 							<div class="text-center">
 								<a href="<%=ORSView.FORGET_PASSWORD_CTL%>"
 									style="color: black; font-size: 15px;"><b>Forget my

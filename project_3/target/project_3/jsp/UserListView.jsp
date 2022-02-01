@@ -44,7 +44,7 @@
 			<center>
 			<div class="col-md-4">
 		
-				<h1 class=" font-weight-thin pt-3" style="color:#162390;">
+				<h1 class=" font-weight-thin pt-3"">
 					<u>User List</u>
 				</h1>
 			</center>

@@ -175,20 +175,13 @@ public class UserRegistrationCtl extends BaseCtl {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Do post Start...");
 		String op = request.getParameter("operation");
-		System.out.println("Operation is: " + op);
 		long id = DataUtility.getLong(request.getParameter("id"));
-		System.out.println("Id is: " + id);
 		UserModelInt userModel = ModelFactory.getInstance().getUserModel();
-		System.out.println("User Model Instance created..");
 		if (OP_SIGN_UP.equalsIgnoreCase(op.trim())) {
-			System.out.println("Entered in if..");
 			UserDTO dto = (UserDTO) populateBean(request);
-			System.out.println("Population Success..");
 			try {
 				long pk = userModel.registerUser(dto);
-				System.out.println("User registration try block..");
 				ServletUtility.setDto(dto, request);
 				ServletUtility.setSuccessMessage("Registration successfully", request);
 			} catch (DuplicateRecordException e) {
@@ -196,17 +189,13 @@ public class UserRegistrationCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("Login id already exists", request);
 				ServletUtility.forward(getView(), request, response);
 			} catch (ApplicationException e) {
-				System.out.println("Catch block of user registration..");
 				ServletUtility.handleException(e, request, response);
 				return;
 			}
 			ServletUtility.setDto(dto, request);
 			ServletUtility.setSuccessMessage("Registration successfully", request);
-			System.out.println("success message set and forworded..");
 			ServletUtility.forward(ORSView.USER_REGISTRATION_VIEW, request, response);
 		} else if (OP_RESET.equalsIgnoreCase(op)) {
-			System.out.println("Redirected to UserRgisrationctl...");
-
 			ServletUtility.redirect(ORSView.USER_REGISTRATION_CTL, request, response);
 			return;
 		}

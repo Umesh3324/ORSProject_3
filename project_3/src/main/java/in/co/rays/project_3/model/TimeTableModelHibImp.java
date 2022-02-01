@@ -198,7 +198,6 @@ public class TimeTableModelHibImp implements TimeTableModelInt{
 
 			dto = (TimeTableDTO) session.get(TimeTableDTO.class, pk);
 		} catch (HibernateException e) {
-
 			throw new ApplicationException("Exception : Exception in getting TimetableDTO by pk");
 		} finally {
 			session.close();

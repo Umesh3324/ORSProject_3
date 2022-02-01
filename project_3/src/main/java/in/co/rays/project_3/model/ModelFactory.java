@@ -147,8 +147,6 @@ public UserModelInt getUserModel() {
 		return subjectModel;
 	}
 
-	
-
 	public FacultyModelInt getFacultyModel() {
 		FacultyModelInt facultyModel = (FacultyModelInt) modelCache.get("facultyModel");
 		if (facultyModel == null) {

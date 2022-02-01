@@ -44,7 +44,7 @@
 			<center>
 			<div class="col-md-4">
 		
-				<h1 class=" font-weight-thin pt-3" style="color:#162390;">
+				<h1 class=" font-weight-thin pt-3"">
 					<u>User List</u>
 				</h1>
 			</center>
@@ -144,7 +144,8 @@
 							<td align="left"><input type="checkbox" class="checkbox"
 								name="ids" value="<%=dto.getId()%>"
 								<%if (dto.getRoleid() == RoleDTO.ADMIN) {%> <%="disabled"%>
-								<%}%>></td>
+								<%}%>>
+							</td>
 							<td class="text"><%=index++%></td>
 							<td class="text"><%=dto.getFirstname()%></td>
 							<td class="text"><%=dto.getLastname()%></td>
@@ -166,8 +167,6 @@
 			</div>
 		
 			<div class="d-flex justify-content-between mb-3">
-			
-			
 				<div class="p-2"><input type="submit" name="operation"
 						class="btn btn-secondary btn-md" style="font-size: 17px"
 						value="<%=UserListCtl.OP_PREVIOUS%>"
